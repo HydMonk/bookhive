@@ -1,0 +1,6 @@
+com\example\bookhive\controller\HomeController.class
+com\example\bookhive\model\Book.class
+com\example\bookhive\controller\LoginController.class
+com\example\bookhive\BookHiveApplication.class
+com\example\bookhive\config\SecurityConfig.class
+com\example\bookhive\repository\BookRepository.class

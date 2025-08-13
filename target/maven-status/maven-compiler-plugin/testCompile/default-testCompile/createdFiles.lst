@@ -1,0 +1,14 @@
+com\example\bookhive\selenium\BaseReportTest$TestResultLogger.class
+com\example\bookhive\selenium\pages\CartPage.class
+com\example\bookhive\selenium\utils\TestUtils.class
+com\example\bookhive\selenium\pages\HomePage.class
+com\example\bookhive\selenium\pages\CheckoutPage.class
+com\example\bookhive\selenium\BaseReportTest.class
+com\example\bookhive\selenium\tests\SmokeTests.class
+com\example\bookhive\selenium\BaseTest.class
+com\example\bookhive\selenium\tests\RegressionTests.class
+com\example\bookhive\selenium\pages\LoginPage.class
+com\example\bookhive\selenium\utils\ExtentManager.class
+com\example\bookhive\selenium\pages\SearchPage.class
+com\example\bookhive\selenium\pages\BookPage.class
+com\example\bookhive\selenium\tests\BookPurchaseTest.class

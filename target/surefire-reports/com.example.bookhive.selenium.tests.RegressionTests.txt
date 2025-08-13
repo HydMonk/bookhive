@@ -1,0 +1,36 @@
+-------------------------------------------------------------------------------
+Test set: com.example.bookhive.selenium.tests.RegressionTests
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 0.058 s <<< FAILURE! -- in com.example.bookhive.selenium.tests.RegressionTests
+com.example.bookhive.selenium.tests.RegressionTests.regression_search_non_existing_book -- Time elapsed: 0.019 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "this.driver" is null
+	at com.example.bookhive.selenium.pages.HomePage.open(HomePage.java:18)
+	at com.example.bookhive.selenium.tests.RegressionTests.regression_search_non_existing_book(RegressionTests.java:52)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.example.bookhive.selenium.tests.RegressionTests.regression_add_to_cart_and_checkout -- Time elapsed: 0.006 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "this.driver" is null
+	at com.example.bookhive.selenium.pages.HomePage.open(HomePage.java:18)
+	at com.example.bookhive.selenium.tests.RegressionTests.regression_add_to_cart_and_checkout(RegressionTests.java:13)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.example.bookhive.selenium.tests.RegressionTests.regression_login_with_wrong_password_fails -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "this.driver" is null
+	at com.example.bookhive.selenium.pages.HomePage.open(HomePage.java:18)
+	at com.example.bookhive.selenium.tests.RegressionTests.regression_login_with_wrong_password_fails(RegressionTests.java:40)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.example.bookhive.selenium.tests.RegressionTests.regression_checkout_with_empty_cart_shows_error -- Time elapsed: 0.008 s <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "this.driver" is null
+	at com.example.bookhive.selenium.pages.HomePage.open(HomePage.java:18)
+	at com.example.bookhive.selenium.tests.RegressionTests.regression_checkout_with_empty_cart_shows_error(RegressionTests.java:62)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+

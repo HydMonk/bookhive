@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>BookHive - Cart</title>
+</head>
+<body>
+<h1>Your Cart</h1>
+
+<ul>
+    <li th:each="book : ${books}">
+        <span th:text="${book.title}"></span> -
+        $<span th:text="${book.price}"></span>
+    </li>
+</ul>
+
+<p>Total: $<span th:text="${total}"></span></p>
+
+<a href="/checkout">Proceed to Checkout</a> | <a href="/">Continue Shopping</a>
+</body>
+</html>
