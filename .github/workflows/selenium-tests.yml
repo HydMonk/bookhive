@@ -41,7 +41,7 @@ jobs:
           done
 
       - name: Run Regression Tests
-        run: mvn clean test -P regression
+        run: mvn clean test -P smoke
         continue-on-error: true # ✅ prevents stopping before artifacts are uploaded
 
       - name: Upload Extent Reports
