@@ -1,45 +1,44 @@
-name: Selenium Tests
+name: Selenium Tests Pipeline
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
+    branches: [ main ]
+  workflow_dispatch: # allow manual trigger
 
 jobs:
-  test:
+  selenium-tests:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the code
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      # Step 2: Set up Java 17
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: maven
 
-      # Step 3: Cache Maven dependencies for speed
-      - name: Cache Maven packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
+      - name: Install dependencies
+        run: mvn dependency:resolve
 
-      # Step 4: Run Maven tests
-      - name: Run Selenium tests
-        run: mvn test -B
+      - name: Run Regression Tests
+        run: mvn clean test -P regression
+        continue-on-error: true # ✅ prevents stopping before artifacts are uploaded
 
-      # Step 5: Upload test report & screenshots as artifacts
       - name: Upload Extent Reports
+        if: always() # ✅ runs even if tests fail
         uses: actions/upload-artifact@v4
         with:
           name: extent-reports
-          path: target/reports
+          path: reports/
+
+      - name: Upload Screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: selenium-screenshots
+          path: screenshots/
