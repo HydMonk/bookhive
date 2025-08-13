@@ -16,7 +16,9 @@ public class TestUtils {
 
     public static WebDriver createDriver() {
         WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new", "--no-sandbox", "--disable-dev-shm-usage");
+        return new ChromeDriver(options);
     }
 
     public static String takeScreenshot(WebDriver driver, String testName) {
