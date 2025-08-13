@@ -25,6 +25,21 @@ jobs:
       - name: Install dependencies
         run: mvn dependency:resolve
 
+      - name: Build project
+        run: mvn clean package -DskipTests
+      - name: Start app
+        run: java -jar target/bookhive-0.0.1-SNAPSHOT.jar &
+      - name: Wait for app to start
+        run: |
+          for i in {1..30}; do
+            if curl -s http://localhost:8080 > /dev/null; then
+              echo "App is up!"
+              break
+            fi
+            echo "Waiting for app..."
+            sleep 2
+          done
+
       - name: Run Regression Tests
         run: mvn clean test -P regression
         continue-on-error: true # ✅ prevents stopping before artifacts are uploaded
