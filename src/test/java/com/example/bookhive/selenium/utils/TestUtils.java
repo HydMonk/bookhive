@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import org.apache.commons.io.FileUtils;
 
